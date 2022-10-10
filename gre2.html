@@ -1,0 +1,27 @@
+<html>
+<head>
+<script>
+function area(form,field)
+{
+if(frm1.ra.checked)
+{
+frm1.res.value=(frm1.no1.value*frm1.no2.value);
+}
+else if(frm1.rb.checked)
+{
+var a=prompt("enter height");
+frm1.res.value=(frm1.no1.value*frm1.no2.value*a);
+}
+}
+</script>
+</head>
+<body>
+<form name="frm1" method=get()>
+Length:<input type="text" name="no1" value="" onchange=area(this.form,this.name)><br><br>
+Breadth:<input type="text" name="no2" value="" onchange=area(this.form,this.name)><br><br>
+<input type="radio" name="r1" id="ra" onclick=area(this.form,this.name) value="area">Area
+<input type="radio" name="r1" id="rb" onclick=area(this.form,this.name)>Volume<br><br>
+Result:<input type="text" name="res" onchange=area(this.form,this.name)>
+</form>
+</body>
+</html>
