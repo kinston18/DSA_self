@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Change image on mouse over</title>
+    <script>function cahnge(im)
+    {
+        document.getElementById("img1").src="logo-ugi.jpg";
+        im.style.height="15%";
+        im.style.height="15%";
+    }
+    function previous(im)
+    {
+        document.getElementById("img1").src="logo.jpg";
+        im.style.height="30%";
+        im.style.width="30%";
+    }
+    function fn(y)
+    {
+        var nwdate=new Date();
+        x=document.getElementById("text1").innerHTML;
+        document.getElementById("heading1").innerHTML=x+"<br>"+nwdate;
+        document.getElementById("heading1").style.backgroundColor="pink";
+
+    }
+        </script>
+</head>
+<body onload=fn(this)>
+    <img id="img1" onmouseover="change(this)" onmouseover="previous(this)" border="4" src="logo-ugi.png" alt="UGI" width="30%" height="20%"> <p id="text1">The function change() is called when the user moves the mouse pointer over the image.</p>
+    <p>The function previous() is called when the mouse pointer is moved out of the image.</p>
+    <h1 id="heading1"></h1>
+    
+</body>
+</html>
