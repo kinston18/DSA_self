@@ -1,0 +1,39 @@
+class Solution {
+    public boolean isNumber(String s) {
+        if (s == null)return false;
+        s = s.trim();
+        if (s.length() == 0) return false;
+        boolean point = false, sign = false, exponent = false, number = false;
+        for (int i = 0; i < s.length(); i++) {
+            char c = s.charAt(i);
+            if (!Character.isDigit(c)) {
+                if (c != 'e' && c != '+' && c != '-' && c != '.') return false;
+                if (c == '.') {
+                    if (point) {
+                        return false;
+                    } else if (exponent) {
+                        return false;
+                    } else {
+                        point = true;
+                    }
+                }
+                if (c == 'e') {
+                    if (exponent) return false;
+                    if (!number) return false;
+                    exponent = true;
+                    number = false;
+                }
+                if (c == '+' || c == '-') {
+                    if (i == 0) {
+                        sign = true;
+                    } else {
+                        if (s.charAt(i - 1) != 'e') return false;
+                    }
+                }
+            } else {
+                number = true;
+            }
+        }
+        return number;
+    }
+}
